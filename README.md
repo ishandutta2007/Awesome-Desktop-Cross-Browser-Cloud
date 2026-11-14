@@ -61,7 +61,7 @@ Below is the comparative breakdown of leading commercial desktop cross-browser c
 
 Explore the top self-hosted browser grids, test runners, and automation frameworks, sorted in **descending order by GitHub stargazers**:
 
-| Repository | Stars | Ecosystem | Description |
+| Repository | GitHub_Stars | Ecosystem | Description |
 | :--- | :--- | :--- | :--- |
 | **[microsoft/playwright](https://github.com/microsoft/playwright)** 🎭 | [![Stars](https://img.shields.io/github/stars/microsoft/playwright?style=social&color=white)](https://github.com/microsoft/playwright/stargazers) | Cross-Browser E2E | Fast, reliable cross-browser end-to-end testing framework for modern web apps with Chromium, Firefox, and WebKit support. |
 | **[puppeteer/puppeteer](https://github.com/puppeteer/puppeteer)** 🎪 | [![Stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers) | Headless Chrome/CDP | Node.js library providing high-level API control over Chrome and Firefox over the Chrome DevTools Protocol (CDP) and WebDriver BiDi. |
