@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#080e1a" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#f1f5f9" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Filters for Glow & Depth -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Ambient Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25" />
+      <circle cx="40" cy="40" r="1" fill="#38bdf8" fill-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.45; }
+      50% { transform: scale(1.15) translate(15px, -10px); opacity: 0.7; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.65; }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
+    }
+    @keyframes floatCard3 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes scanLine {
+      0% { transform: translateY(-20px); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(440px); opacity: 0; }
+    }
+    .orb-cyan { animation: pulseOrb 8s ease-in-out infinite; transform-origin: 200px 150px; }
+    .orb-purple { animation: pulseOrb 10s ease-in-out infinite reverse; transform-origin: 1000px 250px; }
+    .card-1 { animation: floatCard1 5s ease-in-out infinite; }
+    .card-2 { animation: floatCard2 6s ease-in-out infinite 0.7s; }
+    .card-3 { animation: floatCard3 5.5s ease-in-out infinite 1.4s; }
+    .scan-beam { animation: scanLine 6s linear infinite; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" rx="20" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" rx="20" fill="url(#grid)" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g class="orb-cyan">
+    <circle cx="220" cy="130" r="130" fill="#00f2fe" filter="url(#glowCyan)" opacity="0.35" />
+  </g>
+  <g class="orb-purple">
+    <circle cx="980" cy="240" r="160" fill="#7c3aed" filter="url(#glowPurple)" opacity="0.3" />
+  </g>
+
+  <!-- Laser / Grid Beam Effect -->
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="url(#accentCyan)" stroke-width="2" class="scan-beam" opacity="0.4" />
+
+  <!-- Foreground Main Title & Content -->
+  <g transform="translate(600, 110)" text-anchor="middle">
+    <!-- Super Title / Category Tag -->
+    <rect x="-190" y="-36" width="380" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.8" />
+    <text x="0" y="-18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="2">☁️ CLOUD BROWSER ECOSYSTEM ⚡</text>
+
+    <!-- Main Title -->
+    <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" fill="url(#textGrad)" letter-spacing="-0.5">Awesome Desktop Cross-Browser Cloud</text>
+    
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#94a3b8">Curated Directory of Cloud Grids, Browser Infrastructure &amp; High-Throughput Test Automation</text>
+  </g>
+
+  <!-- Interactive Floating Interactive Tech Cards / Badges -->
+  <!-- Card 1: Cloud SaaS Grids -->
+  <g class="card-1" transform="translate(140, 230)">
+    <rect width="260" height="120" rx="14" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.5" />
+    <circle cx="36" cy="36" r="16" fill="#0284c7" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="36" y="42" font-size="16" text-anchor="middle" fill="#ffffff">☁️</text>
+    <text x="66" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Enterprise SaaS Grids</text>
+    <text x="66" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">3,500+ OS/Browser Matrix</text>
+    <line x1="20" y1="72" x2="240" y2="72" stroke="#334155" stroke-width="1" />
+    <text x="20" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#38bdf8">BrowserStack • Sauce Labs • TestMu</text>
+  </g>
+
+  <!-- Card 2: Open Source Infrastructure -->
+  <g class="card-2" transform="translate(470, 230)">
+    <rect width="260" height="120" rx="14" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.5" />
+    <circle cx="36" cy="36" r="16" fill="#9333ea" fill-opacity="0.3" stroke="#c084fc" stroke-width="1.5" />
+    <text x="36" y="42" font-size="16" text-anchor="middle" fill="#ffffff">🚀</text>
+    <text x="66" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Self-Hosted Grids</text>
+    <text x="66" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">Docker &amp; Kubernetes Native</text>
+    <line x1="20" y1="72" x2="240" y2="72" stroke="#334155" stroke-width="1" />
+    <text x="20" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#c084fc">Moon • Selenium Grid • WebSummoner</text>
+  </g>
+
+  <!-- Card 3: Modern Automation Frameworks -->
+  <g class="card-3" transform="translate(800, 230)">
+    <rect width="260" height="120" rx="14" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2" stroke-opacity="0.5" />
+    <circle cx="36" cy="36" r="16" fill="#059669" fill-opacity="0.3" stroke="#34d399" stroke-width="1.5" />
+    <text x="36" y="42" font-size="16" text-anchor="middle" fill="#ffffff">⚡</text>
+    <text x="66" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Modern Frameworks</text>
+    <text x="66" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#94a3b8">CDP &amp; WebDriver BiDi Execution</text>
+    <line x1="20" y1="72" x2="240" y2="72" stroke="#334155" stroke-width="1" />
+    <text x="20" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#34d399">Playwright • Cypress • Puppeteer</text>
+  </g>
+
+  <!-- Border Outline Accent -->
+  <rect x="1" y="1" width="1198" height="418" rx="19" fill="none" stroke="url(#accentCyan)" stroke-width="1.5" stroke-opacity="0.35" />
+</svg>
